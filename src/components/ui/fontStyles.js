@@ -1,11 +1,11 @@
 import { createGlobalStyle } from "styled-components";
-import BrolimboRegular from "../../fonts/BROLIMO-Regular.ttf";
+import BrolimboRegular from "../../fonts/BROLIMO-Regular.woff2";
 import theme from "./theme";
 const FontStyles = createGlobalStyle`
 
 @font-face {
   font-family: 'BROLIMO';
-  src: url(${BrolimboRegular}) format('ttf')
+  src: url(${BrolimboRegular}) format('woff2')
 }
 
     h1 {
