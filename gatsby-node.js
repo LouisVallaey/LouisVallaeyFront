@@ -1,37 +1,36 @@
 exports.createPages = async ({ graphql, actions }) => {
-
   const results = await graphql(
     `
-          {
-          pages: allStrapiPage(sort: { fields: [publishedAt], order: ASC}) {
-            edges {
-              node {
-                name
-                Slug
-                id
-              }
-            }
-          },
-          albums: allStrapiBlogItem{
-            edges {
-              node {
-                title
-                id
-                Slug
-              }
+      {
+        pages: allStrapiPage(sort: { fields: [publishedAt], order: ASC }) {
+          edges {
+            node {
+              name
+              Slug
+              id
             }
           }
+        }
+        albums: allStrapiBlogItem {
+          edges {
+            node {
+              title
+              id
+              Slug
+            }
           }
-      `
-  )
+        }
+      }
+    `
+  );
   if (results.errors) {
     throw results.errors;
   }
   const pages = results.data.pages.edges;
   const albums = results.data.albums.edges;
 
-  const { createPage } = actions
-  pages.forEach(page => {
+  const { createPage } = actions;
+  pages.forEach((page) => {
     createPage({
       path: `/${page.node.name.toLowerCase()}`,
       component: require.resolve("./src/templates/page.js"),
@@ -40,9 +39,9 @@ exports.createPages = async ({ graphql, actions }) => {
         id: page.node.id,
         Slug: page.node.Slug,
       },
-    })
+    });
   });
-  albums.forEach(album => {
+  albums.forEach((album) => {
     createPage({
       path: `/album/${album.node.Slug.toLowerCase()}`,
       component: require.resolve("./src/templates/album.js"),
@@ -51,15 +50,15 @@ exports.createPages = async ({ graphql, actions }) => {
         id: album.node.id,
         Slug: album.node.Slug,
       },
-    })
+    });
   });
 
-  const { createRedirect } = actions
+  const { createRedirect } = actions;
 
   createRedirect({
     fromPath: `/`,
     toPath: `/${pages[0].node.name.toLowerCase()}`,
     redirectInBrowser: true,
     isPermanent: true,
-  })
-}
+  });
+};

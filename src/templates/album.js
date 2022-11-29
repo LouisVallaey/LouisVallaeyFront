@@ -4,44 +4,55 @@ import { graphql } from "gatsby";
 import AlbumHero from "../components/album/albumHero";
 import AlbumContent from "../components/album/albumContent";
 
-export default function Album({ pageContext, data: { allStrapiBlogItem: { edges: { 0: { node: album } } } } }) {
-    return (
-        <Layout>
-        <AlbumHero heroData={album.heroTextual}/>
-        <AlbumContent albumContent={album}></AlbumContent>
-        </Layout>
-
-    )
+export default function Album({
+  data: {
+    allStrapiBlogItem: {
+      edges: {
+        0: { node: album },
+      },
+    },
+  },
+}) {
+  return (
+    <Layout>
+      <AlbumHero heroData={album.heroTextual} />
+      <AlbumContent albumContent={album}></AlbumContent>
+    </Layout>
+  );
 }
 
 export const query = graphql`
-    query GetAllBlogItemDetails($id: String!) {
-    allStrapiBlogItem(filter: {id: {eq: $id}}) {
-        edges {
+  query GetAllBlogItemDetails($id: String!) {
+    allStrapiBlogItem(filter: { id: { eq: $id } }) {
+      edges {
         node {
-            Slug
-            id
-            title
-            Album {
+          Slug
+          id
+          title
+          Album {
             url
             file {
-                childImageSharp {
+              childImageSharp {
                 gatsbyImageData(placeholder: BLURRED, width: 2048, quality: 50)
-                }
+              }
             }
-            }
-            heroTextual {
+          }
+          heroTextual {
             title
             image {
-                file {
+              file {
                 childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED, width: 2048, quality: 80)
+                  gatsbyImageData(
+                    placeholder: BLURRED
+                    width: 2048
+                    quality: 80
+                  )
                 }
-                }
+              }
             }
+          }
         }
-        }
-        }
+      }
     }
-    }
-`
+  }
+`;

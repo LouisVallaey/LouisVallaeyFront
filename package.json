@@ -31,5 +31,9 @@
   },
   "resolutions": {
     "gatsby-plugin-sharp/probe-image-size": "^7.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-plugin-react": "^7.31.11"
   }
 }
