@@ -25,7 +25,7 @@ const ContentContainer = styled.div`
 const GatsbyImageContainer = styled(GatsbyImage)`
     flex-grow: 1;
     img{
-        height: 21vw;
+        height: 26vw;
         max-height: 100%;
         min-width: 100%;
         object-fit: cover;
@@ -43,7 +43,7 @@ const GatsbyImageContainer = styled(GatsbyImage)`
 
 export default function AlbumContent({albumContent}) {
 
-    const images = albumContent.Album.map((image, i) => (
+    const images = Array.from(albumContent.Album).reverse().map((image) => (
         <GatsbyImageContainer image={getImage(image.file)} alt={image.url} key={image.url}/>
     ))
 

@@ -3,10 +3,10 @@ import * as React from "react"
 import Footer from "./footer";
 import Navigation from "./navigation"
 
-const Layout = ({ children, cta, secondary }) => {
+    const Layout = ({ children, cta, secondary }) => {
     const data = useStaticQuery(graphql`
     query GetAllStrapiPage{
-    allStrapiPage(sort: {fields: createdAt, order: ASC}) {
+    allStrapiPage(sort: {fields: publishedAt, order: ASC}) {
         edges {
         node {
             Slug
@@ -17,7 +17,7 @@ const Layout = ({ children, cta, secondary }) => {
     }
     }
   `)
-    
+   
     return (
         <>
             <Navigation pages={data.allStrapiPage.edges} />

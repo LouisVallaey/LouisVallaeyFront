@@ -26,7 +26,7 @@ export const query = graphql`
             url
             file {
                 childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, width: 5760, quality: 80)
+                gatsbyImageData(placeholder: BLURRED, width: 2048, quality: 50)
                 }
             }
             }

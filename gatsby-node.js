@@ -3,7 +3,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const results = await graphql(
     `
           {
-          pages: allStrapiPage(sort: {order: ASC, fields: createdAt}) {
+          pages: allStrapiPage(sort: { fields: [publishedAt], order: ASC}) {
             edges {
               node {
                 name

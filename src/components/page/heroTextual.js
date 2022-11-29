@@ -38,14 +38,6 @@ const TextContainer = styled.div`
     margin-bottom: 50px;
     }
 `
-const CtaButton = styled.button`
-    border: none;
-    border-radius: 5px;
-    padding: 7px 14px 7px 14px;
-    font-size: 1.875rem;
-    color: ${theme.palette.secondary.main};
-    background-color: ${theme.palette.primary.main};
-`
 const VisualContainer = styled.div`
     margin-top: 450px;
     position:relative;

@@ -65,7 +65,7 @@ const FontStyles = createGlobalStyle`
         margin-left: 0px; 
         margin-right: 0px;
         padding: 0;
-        background-color: ${theme.palette.common.black};
+        background-color: ${theme.palette.common.white};
     }
 `;
 

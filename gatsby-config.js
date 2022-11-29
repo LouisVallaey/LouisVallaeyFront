@@ -24,7 +24,7 @@ module.exports = {
       options: {
         apiURL: process.env.GATSBY_STRAPI_API_URL,
         token: process.env.STRAPI_TOKEN,
-        queryLimit: 1000, 
+        queryLimit: 5000, 
         collectionTypes: ['page','blog-item'],
       },
     },

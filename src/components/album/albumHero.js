@@ -5,7 +5,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const HeroContainer = styled.div`
 width: 100vw;
 height: 80vh;
-background-color: #00000038;
 `
 const ContentContainer = styled.div`
     margin: 0 auto;
@@ -40,6 +39,12 @@ const ImageContainer = styled.div`
     position: fixed;
     z-index: -1;
 `
+const Overlay = styled.div`
+    background-color: #00000017;
+    position: fixed;
+    height: 80vh;
+    width: 100vw;
+`
 const GatsbyImageContainer = styled(GatsbyImage)`
     height: 80vh;
     z-index: -1;
@@ -58,6 +63,7 @@ export default function AlbumHero({ heroData }) {
     return (
         <HeroContainer>
             <ImageContainer>
+                <Overlay/>
                 <GatsbyImageContainer image={heroImage} alt={heroData.title} />
             </ImageContainer>
             <ContentContainer>
