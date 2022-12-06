@@ -5,7 +5,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
 const HeroContainer = styled.div`
-  width: 100vw;
   height: 100vh;
 `;
 const ContentContainer = styled.div`
