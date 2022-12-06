@@ -19,6 +19,7 @@ const ContentContainer = styled.div`
   justify-content: space-around;
   height: 100vh;
   align-items: center;
+
   @media only screen and (max-width: 1500px) {
     width: 95%;
   }
@@ -32,7 +33,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 100px;
+
   @media only screen and (max-width: 1000px) {
     width: 80%;
     margin-bottom: 50px;
@@ -56,8 +57,10 @@ const HeroDetail = styled.img`
   }
 `;
 const GatsbyImageContainer = styled(GatsbyImage)`
-  width: 550px;
   z-index: 2;
+  img {
+    width: 55vh;
+  }
   @media only screen and (max-width: 1500px) {
     width: 40vw;
   }

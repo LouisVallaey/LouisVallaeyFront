@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 module.exports = {
+  trailingSlash: "never",
   siteMetadata: {
     title: `frontEndLouisVallaey`,
     siteUrl: `https://www.yourdomain.tld`,
@@ -8,6 +9,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
