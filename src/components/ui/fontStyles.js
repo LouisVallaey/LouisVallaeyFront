@@ -67,7 +67,7 @@ const FontStyles = createGlobalStyle`
         padding: 0;
         background-color: ${theme.palette.common.white};
     }
-    #gatsby-focus-wrapper{
+    #gatsby-focus-wrapper:nth-child(2){
         display:none;
     }
 `;
