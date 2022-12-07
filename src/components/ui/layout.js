@@ -6,7 +6,7 @@ import Navigation from "./navigation";
 const Layout = ({ children, cta, secondary }) => {
   const data = useStaticQuery(graphql`
     query GetAllStrapiPage {
-      allStrapiPage(sort: { fields: publishedAt, order: ASC }) {
+      allStrapiPage(sort: { publishedAt: ASC }) {
         edges {
           node {
             Slug

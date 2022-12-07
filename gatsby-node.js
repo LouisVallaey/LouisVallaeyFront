@@ -2,7 +2,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const results = await graphql(
     `
       {
-        pages: allStrapiPage(sort: { fields: [publishedAt], order: ASC }) {
+        pages: allStrapiPage(sort: { publishedAt: ASC }) {
           edges {
             node {
               name
@@ -51,13 +51,5 @@ exports.createPages = async ({ graphql, actions }) => {
         Slug: album.node.Slug,
       },
     });
-  });
-
-  const { createRedirect } = actions;
-  createRedirect({
-    fromPath: `/`,
-    toPath: `/${pages[0].node.name.toLowerCase()}`,
-    redirectInBrowser: true,
-    isPermanent: true,
   });
 };

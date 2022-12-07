@@ -67,6 +67,9 @@ const GatsbyImageContainer = styled(GatsbyImage)`
   @media only screen and (max-width: 1000px) {
     height: 100vh;
     width: 100vw;
+    img {
+      width: 100%;
+    }
   }
 `;
 export default function HeroTextual({ heroData }) {

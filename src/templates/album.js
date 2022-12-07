@@ -21,6 +21,25 @@ export default function Album({
   );
 }
 
+export function Head({
+  data: {
+    allStrapiBlogItem: {
+      edges: {
+        0: { node: album },
+      },
+    },
+  },
+}) {
+  console.log(album);
+  return (
+    <>
+      <title>{album.heroTextual.title} | louisvallaey.be</title>
+      <meta name="description" content={album.seoMeta} />
+      <meta name="robots" content="index, follow" />
+    </>
+  );
+}
+
 export const query = graphql`
   query GetAllBlogItemDetails($id: String!) {
     allStrapiBlogItem(filter: { id: { eq: $id } }) {
@@ -29,6 +48,7 @@ export const query = graphql`
           Slug
           id
           title
+          seoMeta
           Album {
             url
             file {

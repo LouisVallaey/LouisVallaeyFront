@@ -5,15 +5,16 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import logoGreen from "../../images/logoGreen.svg";
 
 const HeroContainer = styled.div`
-  position: relative;
   z-index: 1;
-  background-color: ${(props) =>
-    props.primary ? theme.palette.primary.main : theme.palette.secondary.main};
+  position: relative;
+  display: flex;
+  justify-content: center;
   width: 100%;
   padding-top: 100px;
   padding-bottom: 100px;
-  display: flex;
-  justify-content: center;
+  background-color: ${(props) =>
+    props.primary ? theme.palette.primary.main : theme.palette.secondary.main};
+
   @media only screen and (max-width: 1000px) {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -27,7 +28,8 @@ const ColoredAccent = styled.div`
   height: 250px;
   background-color: ${(props) =>
     props.primary ? theme.palette.secondary.main : theme.palette.primary.main};
-  @media only screen and (max-width: 1280px) {
+
+  @media only screen and (max-width: 1300px) {
     width: 40px;
   }
   @media only screen and (max-width: 1000px) {
@@ -37,37 +39,47 @@ const ColoredAccent = styled.div`
 
 const ContentContainer = styled.div`
   position: relative;
-  padding-top: 15vh;
-  min-height: 60vh;
-  flex-direction: ${(props) => (props.primary ? "row" : "row-reverse")};
-  width: 70%;
   display: flex;
   align-items: center;
+  gap: 40px;
+  padding-top: 15vh;
+  min-height: 60vh;
+  width: 70%;
   justify-content: ${(props) => (props.logo ? "flex-end" : "space-around")};
+  flex-direction: ${(props) => (props.primary ? "row" : "row-reverse")};
+
+  @media only screen and (max-width: 1300px) {
+    padding-top: 0vh;
+  }
   @media only screen and (max-width: 1000px) {
     padding-top: 0vh;
     min-height: 50vh;
-    width: 80%;
+    gap: 0px;
   }
 `;
 
 const TitleContainer = styled.div`
   width: ${(props) => (props.logo ? "800px" : "620px")};
   text-align: ${(props) => (props.primary ? "left" : "right")};
+  margin-bottom: 150px;
   h3 {
     color: ${(props) =>
       props.primary
         ? theme.palette.primary.main
         : theme.palette.secondary.main};
-    @media only screen and (max-width: 1100px) {
+  }
+
+  @media only screen and (max-width: 1300px) {
+    h3 {
       font-size: 2rem;
     }
-    @media only screen and (max-width: 1000px) {
+    margin-bottom: 250px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    h3 {
       font-size: 2.4rem;
     }
-  }
-  margin-bottom: 150px;
-  @media only screen and (max-width: 1000px) {
     text-align: center;
     margin-bottom: 0px;
   }
@@ -81,8 +93,8 @@ const VerticalImageContainer = styled.div`
 const HorizontalImageContainer = styled.div`
   position: absolute;
   display: flex;
-  left: 0;
   justify-content: center;
+  left: 0;
   width: 100%;
   @media only screen and (max-width: 1000px) {
     display: none;

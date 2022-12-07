@@ -4,7 +4,7 @@ module.exports = {
   trailingSlash: "never",
   siteMetadata: {
     title: `frontEndLouisVallaey`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.louisvallaey.be`,
   },
   plugins: [
     "gatsby-plugin-image",
@@ -28,6 +28,14 @@ module.exports = {
         token: process.env.STRAPI_TOKEN,
         queryLimit: 5000,
         collectionTypes: ["page", "blog-item"],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.louisvallaey.be",
+        sitemap: "https://www.louisvallaey.be/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
   ],

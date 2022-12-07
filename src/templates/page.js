@@ -9,43 +9,54 @@ import HeroCta from "../components/page/heroCta";
 
 export default function Page({
   data: {
-    allStrapiPage: { edges: page },
+    allStrapiPage: {
+      edges: {
+        0: { node: page },
+      },
+    },
   },
 }) {
-  const pagedetails = page[0].node;
   const heroSection = () => {
     //When hero has a coverimage then we use standard Hero
-    if (pagedetails.heroType[0].cover !== undefined) {
-      return <Hero heroData={pagedetails.heroType[0]} />;
+    if (page.heroType[0].cover !== undefined) {
+      return <Hero heroData={page.heroType[0]} />;
       //When there is no coverimage we use a HeroTextual
-    } else if (pagedetails.heroType[0].cover === undefined) {
-      if (pagedetails.heroType[0].content !== undefined) {
-        return <HeroTextual heroData={pagedetails.heroType[0]} />;
+    } else if (page.heroType[0].cover === undefined) {
+      if (page.heroType[0].content !== undefined) {
+        return <HeroTextual heroData={page.heroType[0]} />;
       } else {
-        return <HeroCta heroData={pagedetails} />;
+        return <HeroCta heroData={page} />;
       }
     }
   };
 
   return (
-    <Layout
-      cta={pagedetails.heroType[0].cta}
-      secondary={pagedetails.invertedColor}
-    >
+    <Layout cta={page.heroType[0].cta} secondary={page.invertedColor}>
       {heroSection()}
-      {pagedetails.heroSecond !== null ? (
-        <HeroSecond
-          heroData={pagedetails.heroSecond}
-          primary={pagedetails.invertedColor}
-        />
+      {page.heroSecond !== null ? (
+        <HeroSecond heroData={page.heroSecond} primary={page.invertedColor} />
       ) : null}
-      {pagedetails.workContent !== null ? (
-        <Work
-          workContent={pagedetails.workContent}
-          cta={pagedetails.heroType[0].cta}
-        />
+      {page.workContent !== null ? (
+        <Work workContent={page.workContent} cta={page.heroType[0].cta} />
       ) : null}
     </Layout>
+  );
+}
+export function Head({
+  data: {
+    allStrapiPage: {
+      edges: {
+        0: { node: page },
+      },
+    },
+  },
+}) {
+  return (
+    <>
+      <title>{page.name} | louisvallaey.be</title>
+      <meta name="description" content={page.seoMeta} />
+      <meta name="robots" content="index, follow" />
+    </>
   );
 }
 
@@ -56,6 +67,8 @@ export const query = graphql`
         node {
           name
           Slug
+          seoTitle
+          seoMeta
           id
           invertedColor
           heroType {
