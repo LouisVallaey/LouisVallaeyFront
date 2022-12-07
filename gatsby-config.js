@@ -11,7 +11,6 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
-    "gatsby-plugin-vercel",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
