@@ -30,7 +30,6 @@ export function Head({
     },
   },
 }) {
-  console.log(album);
   return (
     <>
       <title>{album.heroTextual.title} | louisvallaey.be</title>

@@ -8,10 +8,10 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-vercel",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
@@ -28,14 +28,6 @@ module.exports = {
         token: process.env.STRAPI_TOKEN,
         queryLimit: 5000,
         collectionTypes: ["page", "blog-item"],
-      },
-    },
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: "https://www.louisvallaey.be",
-        sitemap: "https://www.louisvallaey.be/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
   ],
