@@ -67,6 +67,9 @@ const FontStyles = createGlobalStyle`
         padding: 0;
         background-color: ${theme.palette.common.white};
     }
+    #gatsby-focus-wrapper{
+        display:none;
+    }
 `;
 
 export default FontStyles;
