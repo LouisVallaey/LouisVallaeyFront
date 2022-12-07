@@ -22,7 +22,6 @@
     "gatsby-plugin-sharp": "^5.2.0",
     "gatsby-plugin-sitemap": "^6.2.0",
     "gatsby-plugin-styled-components": "^6.2.0",
-    "gatsby-plugin-vercel": "^1.0.3",
     "gatsby-source-filesystem": "^5.2.0",
     "gatsby-source-strapi": "github:relate-app/gatsby-source-strapi",
     "gatsby-transformer-sharp": "^5.2.0",
