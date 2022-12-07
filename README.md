@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby Photography portfolio for Louis Vallaey
+  Gatsby Photography portfolio for Louis Vallaey 
 </h1>
 
 ## 🚀 start
