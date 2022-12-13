@@ -43,13 +43,7 @@ const GatsbyImageContainer = styled(GatsbyImage)`
 export default function AlbumContent({ albumContent }) {
   const images = Array.from(albumContent.Album)
     .reverse()
-    .map((image) => (
-      <GatsbyImageContainer
-        image={getImage(image.file)}
-        alt={image.url}
-        key={image.url}
-      />
-    ));
+    .map((image) => <GatsbyImageContainer image={getImage(image.file)} alt={image.url} key={image.url} />);
 
   return (
     <HeroContainer>

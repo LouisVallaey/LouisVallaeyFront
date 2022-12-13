@@ -33,12 +33,8 @@ export default function Page({
   return (
     <Layout cta={page.heroType[0].cta} secondary={page.invertedColor}>
       {heroSection()}
-      {page.heroSecond !== null ? (
-        <HeroSecond heroData={page.heroSecond} primary={page.invertedColor} />
-      ) : null}
-      {page.workContent !== null ? (
-        <Work workContent={page.workContent} cta={page.heroType[0].cta} />
-      ) : null}
+      {page.heroSecond !== null ? <HeroSecond heroData={page.heroSecond} primary={page.invertedColor} /> : null}
+      {page.workContent !== null ? <Work workContent={page.workContent} cta={page.heroType[0].cta} /> : null}
     </Layout>
   );
 }
@@ -80,11 +76,7 @@ export const query = graphql`
                 url
                 file {
                   childImageSharp {
-                    gatsbyImageData(
-                      placeholder: BLURRED
-                      width: 5760
-                      quality: 80
-                    )
+                    gatsbyImageData(placeholder: BLURRED, width: 5760, quality: 80)
                   }
                 }
               }
@@ -98,11 +90,7 @@ export const query = graphql`
                 url
                 file {
                   childImageSharp {
-                    gatsbyImageData(
-                      placeholder: BLURRED
-                      width: 5760
-                      quality: 80
-                    )
+                    gatsbyImageData(placeholder: BLURRED, width: 5760, quality: 80)
                   }
                 }
               }
@@ -116,11 +104,7 @@ export const query = graphql`
               url
               file {
                 childImageSharp {
-                  gatsbyImageData(
-                    placeholder: BLURRED
-                    width: 5760
-                    quality: 80
-                  )
+                  gatsbyImageData(placeholder: BLURRED, width: 5760, quality: 80)
                 }
               }
             }
@@ -135,11 +119,7 @@ export const query = graphql`
                 url
                 file {
                   childImageSharp {
-                    gatsbyImageData(
-                      placeholder: BLURRED
-                      width: 5760
-                      quality: 80
-                    )
+                    gatsbyImageData(placeholder: BLURRED, width: 5760, quality: 80)
                   }
                 }
               }

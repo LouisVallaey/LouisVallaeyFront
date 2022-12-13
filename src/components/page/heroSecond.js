@@ -12,8 +12,7 @@ const HeroContainer = styled.div`
   width: 100%;
   padding-top: 100px;
   padding-bottom: 100px;
-  background-color: ${(props) =>
-    props.primary ? theme.palette.primary.main : theme.palette.secondary.main};
+  background-color: ${(props) => (props.primary ? theme.palette.primary.main : theme.palette.secondary.main)};
 
   @media only screen and (max-width: 1000px) {
     padding-top: 0px;
@@ -26,8 +25,7 @@ const ColoredAccent = styled.div`
   bottom: 180px;
   width: 80px;
   height: 250px;
-  background-color: ${(props) =>
-    props.primary ? theme.palette.secondary.main : theme.palette.primary.main};
+  background-color: ${(props) => (props.primary ? theme.palette.secondary.main : theme.palette.primary.main)};
 
   @media only screen and (max-width: 1300px) {
     width: 40px;
@@ -63,10 +61,7 @@ const TitleContainer = styled.div`
   text-align: ${(props) => (props.primary ? "left" : "right")};
   margin-bottom: 150px;
   h3 {
-    color: ${(props) =>
-      props.primary
-        ? theme.palette.primary.main
-        : theme.palette.secondary.main};
+    color: ${(props) => (props.primary ? theme.palette.primary.main : theme.palette.secondary.main)};
   }
 
   @media only screen and (max-width: 1300px) {
@@ -125,12 +120,7 @@ export default function HeroSecond({ heroData, primary }) {
     //only take first 2 images
     const images = heroData.images.slice(0, 2);
     //sort images on vertical or horizontal layout (important for styling)
-    images.sort((a, b) =>
-      a.file.childImageSharp.gatsbyImageData.height <
-      b.file.childImageSharp.gatsbyImageData.height
-        ? 1
-        : -1
-    );
+    images.sort((a, b) => (a.file.childImageSharp.gatsbyImageData.height < b.file.childImageSharp.gatsbyImageData.height ? 1 : -1));
     return (
       <>
         {
@@ -159,10 +149,7 @@ export default function HeroSecond({ heroData, primary }) {
   return (
     <HeroContainer primary={!primary}>
       <ColoredAccent primary={!primary} />
-      <ContentContainer
-        logo={!(heroData.displayLogo == null || false)}
-        primary={!primary}
-      >
+      <ContentContainer logo={!(heroData.displayLogo == null || false)} primary={!primary}>
         <ImageContainer>
           {heroData.displayLogo == null || false ? (
             getImages()
@@ -172,10 +159,7 @@ export default function HeroSecond({ heroData, primary }) {
             </LogoContainer>
           )}
         </ImageContainer>
-        <TitleContainer
-          primary={primary}
-          logo={!(heroData.displayLogo == null || false)}
-        >
+        <TitleContainer primary={primary} logo={!(heroData.displayLogo == null || false)}>
           <h3>{heroData.content}</h3>
         </TitleContainer>
       </ContentContainer>

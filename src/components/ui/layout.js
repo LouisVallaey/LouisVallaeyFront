@@ -22,11 +22,7 @@ const Layout = ({ children, cta, secondary }) => {
     <>
       <Navigation pages={data.allStrapiPage.edges} />
       {children}
-      <Footer
-        cta={cta}
-        secondary={secondary}
-        pages={data.allStrapiPage.edges}
-      />
+      <Footer cta={cta} secondary={secondary} pages={data.allStrapiPage.edges} />
     </>
   );
 };

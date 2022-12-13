@@ -92,10 +92,7 @@ export default function Work({ workContent, cta }) {
 
   const items = workContent.blog_items.slice(0, 3).map((item, i) => (
     <BlogItemcontentContainer key={i}>
-      <BlogItemContainer
-        to={`/album/${item.Slug.toLowerCase()}`}
-        key={item.Slug}
-      >
+      <BlogItemContainer to={`/album/${item.Slug.toLowerCase()}`} key={item.Slug}>
         <GatsbyImage image={getImage(item.tumbnail.file)} alt={item.Slug} />
       </BlogItemContainer>
       <h5>{item.pageDescription}</h5>

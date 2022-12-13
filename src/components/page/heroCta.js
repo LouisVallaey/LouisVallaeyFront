@@ -84,9 +84,7 @@ export default function HeroCta({ heroData }) {
       <ContentContainer>
         <TextContainer>
           <h2>Lets Connect!</h2>
-          <a href="mailto: info@louisvallaey.be">
-            email : info@louisvallaey.be
-          </a>
+          <a href="mailto: info@louisvallaey.be">email : info@louisvallaey.be</a>
           <a href="tel:0472098791"> tel : 0472 09 87 91</a>
         </TextContainer>
         <VisualContainer>

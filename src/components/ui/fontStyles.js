@@ -3,10 +3,17 @@ import BrolimboRegular from "../../fonts/BROLIMO-Regular.woff2";
 import theme from "./theme";
 const FontStyles = createGlobalStyle`
 
-@font-face {
-  font-family: 'BROLIMO';
-  src: url(${BrolimboRegular}) format('woff2')
-}
+    @font-face {
+    font-family: 'BROLIMO';
+    src: url(${BrolimboRegular}) format('woff2')
+    }
+
+    body{
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+        background-color: ${theme.palette.common.white};
+    }
 
     h1 {
         margin: 20px 0px 20px 0px;
@@ -58,14 +65,6 @@ const FontStyles = createGlobalStyle`
     }
     button {
         font-family: 'BROLIMO';
-    }
-    body{
-        margin-top: 0px; 
-        margin-bottom: 0px; 
-        margin-left: 0px; 
-        margin-right: 0px;
-        padding: 0;
-        background-color: ${theme.palette.common.white};
     }
     #gatsby-focus-wrapper:nth-child(2){
         display:none;
