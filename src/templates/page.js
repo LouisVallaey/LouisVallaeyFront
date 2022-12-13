@@ -53,7 +53,7 @@ export function Head({
 }) {
   return (
     <>
-      <title>{page.name} | louisvallaey.be</title>
+      <title>{page.name} | Louis Vallaey</title>
       <meta name="description" content={page.seoMeta} />
       <meta name="robots" content="index, follow" />
     </>

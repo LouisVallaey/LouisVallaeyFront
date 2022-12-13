@@ -32,7 +32,7 @@ export function Head({
 }) {
   return (
     <>
-      <title>{album.heroTextual.title} | louisvallaey.be</title>
+      <title>{album.heroTextual.title} | Louis Vallaey</title>
       <meta name="description" content={album.seoMeta} />
       <meta name="robots" content="index, follow" />
     </>
